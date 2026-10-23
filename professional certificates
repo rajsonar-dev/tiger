@@ -1,0 +1,22 @@
+% Facts
+certification(atharva, cloud_computing).
+certification(roshan, cloud_computing).
+certification(mayuri, cybersecurity).
+certification(shubham, data_ai).
+certification(huda, networking_it_support).
+
+% Rules
+role(Person, cloud_engineer) :-
+    certification(Person, cloud_computing).
+
+role(Person, cloud_architect) :-
+    certification(Person, cloud_computing).
+
+role(Person, ethical_hacker) :-
+    certification(Person, cybersecurity).
+
+role(Person, data_scientist) :-
+    certification(Person, data_ai).
+
+role(Person, systems_administrator) :-
+    certification(Person, networking_it_support).

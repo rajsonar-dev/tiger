@@ -1,0 +1,20 @@
+% Facts
+parent(pam, bob).
+parent(tom, bob).
+parent(tom, liz).
+parent(bob, ann).
+parent(bob, pat).
+
+female(pam).
+male(tom).
+male(bob).
+female(liz).
+female(ann).
+female(pat).
+
+% Rule
+sister(X, Y) :-
+    parent(Z, X),
+    parent(Z, Y),
+    female(X),
+    X \= Y.

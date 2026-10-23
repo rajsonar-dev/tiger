@@ -1,0 +1,11 @@
+% Facts
+food(burger).
+food(pasta).
+food(pizza).
+
+lunch(pizza).
+dinner(pasta).
+
+% Rule
+meal(X) :-
+    food(X).

@@ -1,0 +1,15 @@
+% Facts
+sing_a_song(ananya).
+listens_to_music(rohit).
+
+% Rules
+listens_to_music(Person) :-
+    sing_a_song(Person).
+
+happy(Person) :-
+    sing_a_song(Person).
+
+happy(Person) :-
+    listens_to_music(Person).
+
+plays_guitar(Person) :-

@@ -1,0 +1,9 @@
+% Facts
+owns(jack, bmw).
+owns(john, chevy).
+owns(olivia, civic).
+owns(jane, chevy).
+
+sedan(bmw).
+sedan(civic).
+truck(chevy).

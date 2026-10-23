@@ -1,0 +1,12 @@
+% Facts
+studies(rahul, java).
+studies(sneha, java).
+studies(jiya, statistics).
+
+teaches(mary, java).
+teaches(jary, statistics).
+
+% Rule
+student_of(Student, Professor) :-
+    teaches(Professor, Course),
+    studies(Student, Course).

@@ -1,0 +1,14 @@
+% Facts
+father(sudip, piyush).
+father(sudip, raj).
+
+male(piyush).
+male(raj).
+
+% Rule
+brother(A, B) :-
+    male(A),
+    male(B),
+    father(F, A),
+    father(F, B),
+    A \= B.

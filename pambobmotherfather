@@ -1,0 +1,20 @@
+% Facts
+parent(pam, bob).
+parent(tom, bob).
+parent(bob, ann).
+parent(bob, pat).
+
+female(pam).
+male(tom).
+male(bob).
+female(ann).
+female(pat).
+
+% Rules
+mother(X, Y) :-
+    parent(X, Y),
+    female(X).
+
+father(X, Y) :-
+    parent(X, Y),
+    male(X).

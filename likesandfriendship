@@ -1,0 +1,9 @@
+% Facts
+likes(john, jane).
+likes(jane, john).
+likes(jack, jane).
+
+% Rule
+friends(X, Y) :-
+    likes(X, Y),
+    likes(Y, X).
