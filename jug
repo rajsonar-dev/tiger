@@ -1,0 +1,37 @@
+jug1 = 4
+jug2 = 3
+aim = 2
+
+
+a = 0
+b = 0
+
+
+print("Water Jug Problem")
+
+
+while a != aim and b != aim:
+
+
+    print("Jug1 =", a, "Jug2 =", b)
+
+
+    if a == 0:
+        a = jug1
+        print("Fill Jug1")
+
+
+    elif b == jug2:
+        b = 0
+        print("Empty Jug2")
+
+
+    else:
+        water = min(a, jug2 - b)
+        a = a - water
+        b = b + water
+        print("Pour Jug1 -> Jug2")
+
+
+print("Jug1 =", a, "Jug2 =", b)
+print("Goal Achieved!")

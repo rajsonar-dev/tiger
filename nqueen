@@ -1,0 +1,26 @@
+def safe(board, row, col):
+    for i in range(row):
+
+        if board[i] == col:
+            return False
+
+        if abs(board[i] - col) == abs(i - row):
+            return False
+    return True
+
+def solve(board, row, n):
+    if row == n:
+        for i in board:
+            print("." * i + "Q" + "." * (n - i - 1))
+        print()
+        return
+
+    for col in range(n):
+        if safe(board, row, col):
+            board[row] = col
+            solve(board, row + 1, n)
+            board[row] = -1
+
+n = int(input("Enter N: "))
+board = [-1] * n
+solve(board, 0, n)
