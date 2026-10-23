@@ -1,0 +1,65 @@
+# Maharashtra Map Coloring Problem
+
+# Districts / Regions
+regions = (
+    'Mumbai', 'Thane', 'Pune', 'Nashik',
+    'Ahmednagar', 'Aurangabad', 'Nagpur'
+)
+
+# Available colors
+colors = ['Red', 'Green', 'Blue']
+
+# Neighbouring regions
+constraints = [
+    ('Mumbai', 'Thane'),
+    ('Thane', 'Nashik'),
+    ('Thane', 'Pune'),
+    ('Pune', 'Ahmednagar'),
+    ('Nashik', 'Ahmednagar'),
+    ('Nashik', 'Aurangabad'),
+    ('Ahmednagar', 'Aurangabad'),
+    ('Aurangabad', 'Nagpur')
+]
+
+# Store assigned colors
+result = {}
+
+# Check whether color is safe
+def is_safe(region, color):
+    for r1, r2 in constraints:
+        if r1 == region and r2 in result:
+            if result[r2] == color:
+                return False
+
+        if r2 == region and r1 in result:
+            if result[r1] == color:
+                return False
+
+    return True
+
+# Solve using backtracking
+def solve(index):
+    if index == len(regions):
+        return True
+
+    region = regions[index]
+
+    for color in colors:
+        if is_safe(region, color):
+            result[region] = color
+
+            if solve(index + 1):
+                return True
+
+            del result[region]
+
+    return False
+
+# Display solution
+print("Maharashtra Map Coloring Solution:")
+
+if solve(0):
+    for region in regions:
+        print(region, ":", result[region])
+else:
+    print("No solution found.")
